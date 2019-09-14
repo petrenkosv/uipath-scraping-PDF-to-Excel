@@ -60,7 +60,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,127.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,107.5 120,107.5 120,126</av:PointCollection>
         <x:Double x:Key="Width">640</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -70,12 +70,12 @@
     <FlowStep x:Name="__ReferenceID2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,127.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,193.5 300,243.5</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">20,126</av:Point>
+          <av:Size x:Key="ShapeSize">200,303</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">220,277.5 480,277.5 480,297</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Description:&#xD;&#xA;&#xD;&#xA;Initial Information for further processing is collected here.&#xD;&#xA;================================&#xD;&#xA;&#xD;&#xA;IMPORTANT! &#xD;&#xA;&#xD;&#xA;1.Add Path to the Project folder&#xD;&#xA;&#xD;&#xA;2. And name Fields for Scraping" DisplayName="Initial Data" sap:VirtualizedContainerService.HintSize="376,541" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;&#xA;Initial Information for further processing is collected here.&#xA;================================&#xA;&#xA;IMPORTANT! &#xA;&#xA;1.Add Path to the Project folder&#xA;&#xA;2. And name Fields for Scraping" DisplayName="Initial Data" sap:VirtualizedContainerService.HintSize="200,303" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -87,7 +87,7 @@
             <OutArgument x:TypeArguments="x:String">[Project_Folder]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            <InArgument x:TypeArguments="x:String">add here</InArgument>
           </Assign.Value>
         </Assign>
         <Assign DisplayName="Fields for Scraping" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
@@ -109,12 +109,12 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,243.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,66</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,309.5 300,359.5</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">380,297</av:Point>
+              <av:Size x:Key="ShapeSize">200,68</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">480,365 480,447</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -155,11 +155,11 @@
             <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,359.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                  <av:Point x:Key="ShapeLocation">380,447</av:Point>
+                  <av:Size x:Key="ShapeSize">200,68</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
