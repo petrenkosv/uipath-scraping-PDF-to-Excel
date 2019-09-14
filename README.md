@@ -4,7 +4,7 @@
 ## Get Started
 1. Install
   ```
-  1.Add Path to the Project folder
+  1. Add Path to the Project folder
 
   2. And name Fields for Scraping
   ```
