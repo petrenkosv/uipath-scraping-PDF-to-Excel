@@ -14,7 +14,7 @@
 
 **2. Put PDF files to PDF folder**
   ```
-  PDF Folder has to be in "Details" view mode
+  Note: PDF Folder has to be in "Details" view mode
   ```
   
   ![](https://doc-10-8o-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/1eqj2n0buiepasuuk0gnia6neu42j5hc/1568433600000/17256163865911582076/*/1tyHroMdG2yK1f3BRmr9if_JHWMx77Q9P)
