@@ -17,7 +17,7 @@
   Note: PDF Folder has to be in "Details" view mode
   ```
   
-  ![](https://doc-10-8o-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/1eqj2n0buiepasuuk0gnia6neu42j5hc/1568433600000/17256163865911582076/*/1tyHroMdG2yK1f3BRmr9if_JHWMx77Q9P)
+  ![](https://doc-0s-c8-docs.googleusercontent.com/docs/securesc/j53s80gf4ek9qfs1hbcicbgtm5h29u1h/jmu6oehvee08c7i40dlgb9q3m5erqgh5/1568908800000/17256163865911582076/05392120774662906479/1tyHroMdG2yK1f3BRmr9if_JHWMx77Q9P?h=07621860547206318088)
 
 
 **3. Run the script**
