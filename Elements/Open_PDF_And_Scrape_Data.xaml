@@ -69,7 +69,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[&quot;PDF\&quot;+in_PDF_Name+&quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="654,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="1" Text="[PDF_Data]" />
+    <ui:ReadPDFText DisplayName="Read PDF Text" FileName="[in_PDF_Name]" sap:VirtualizedContainerService.HintSize="654,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="1" Text="[PDF_Data]" />
     <Assign sap:VirtualizedContainerService.HintSize="654,60" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[out_Field_Data]</OutArgument>

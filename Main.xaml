@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="694,736" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="694,736" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
@@ -26,7 +26,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -50,10 +50,9 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="674,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:String" Name="Project_Folder" />
-      <Variable x:TypeArguments="sd:DataTable" Name="dt_PDF_Files_In_The_Folder" />
-      <Variable x:TypeArguments="s:String[]" Name="Project_Fields" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="Field_Data" />
+      <Variable x:TypeArguments="s:String[]" Name="ProjectFields" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="FieldData" />
+      <Variable x:TypeArguments="s:String[]" Name="PdfFileArray" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -71,11 +70,14 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">20,126</av:Point>
-          <av:Size x:Key="ShapeSize">200,303</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">220,277.5 480,277.5 480,297</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,288</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">220,270 480,270 480,297</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;&#xA;Initial Information for further processing is collected here.&#xA;================================&#xA;&#xA;IMPORTANT! &#xA;&#xA;1.Add Path to the Project folder&#xA;&#xA;2. And name Fields for Scraping" DisplayName="Initial Data" sap:VirtualizedContainerService.HintSize="200,303" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence sap2010:Annotation.AnnotationText="Description:&#xA;&#xA;Initial Information for further processing is collected here.&#xA;================================&#xA;&#xA;IMPORTANT! &#xA;&#xA;1.Add Path to the Project folder&#xA;&#xA;2. And name Fields for Scraping" DisplayName="Initial Data" sap:VirtualizedContainerService.HintSize="200,288" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ProjectFolder" />
+        </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -84,15 +86,15 @@
         </sap:WorkflowViewStateService.ViewState>
         <Assign DisplayName="Path to the Project Folder" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[Project_Folder]</OutArgument>
+            <OutArgument x:TypeArguments="x:String">[ProjectFolder]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">add here</InArgument>
+            <InArgument x:TypeArguments="x:String">[System.Environment.CurrentDirectory]</InArgument>
           </Assign.Value>
         </Assign>
         <Assign DisplayName="Fields for Scraping" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
-            <OutArgument x:TypeArguments="s:String[]">[Project_Fields]</OutArgument>
+            <OutArgument x:TypeArguments="s:String[]">[ProjectFields]</OutArgument>
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="s:String[]">[{"Frontage (feet):","Frontage (metres):","Bedrooms:"}]</InArgument>
@@ -100,8 +102,20 @@
         </Assign>
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Find_New_PDF_In_The_Folder workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Elements\Find_New_PDF_In_The_Folder.xaml">
           <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_PDF_Files_In_The_Folder">[dt_PDF_Files_In_The_Folder]</OutArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_Folder_Name">[Project_Folder+"\PDF"]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_Folder_Name">
+              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="ProjectFolder+&quot;\PDF&quot;">
+                <mva:VisualBasicValue.Result>
+                  <OutArgument x:TypeArguments="x:String" />
+                </mva:VisualBasicValue.Result>
+              </mva:VisualBasicValue>
+            </InArgument>
+            <OutArgument x:TypeArguments="s:String[]" x:Key="out_FileArray">
+              <mva:VisualBasicReference x:TypeArguments="s:String[]" ExpressionText="PdfFileArray">
+                <mva:VisualBasicReference.Result>
+                  <OutArgument x:TypeArguments="Location(s:String[])" />
+                </mva:VisualBasicReference.Result>
+              </mva:VisualBasicReference>
+            </OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
@@ -110,21 +124,21 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">380,297</av:Point>
-              <av:Size x:Key="ShapeSize">200,68</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">480,365 480,447</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">480,363 480,447</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap:VirtualizedContainerService.HintSize="454,532" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_PDF_Files_In_The_Folder]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="426,454" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,440" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PdfFileArray]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
@@ -132,34 +146,63 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Scrape_Data_In_PDF workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Elements\Open_PDF_And_Scrape_Data.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Scrape_Data_In_PDF workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="Elements\Open_PDF_And_Scrape_Data.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_Field_Data">[Field_Data]</OutArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_PDF_Name">[row(0).ToString]</InArgument>
-                        <InArgument x:TypeArguments="s:String[]" x:Key="in_Project_Fields">[Project_Fields]</InArgument>
+                        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="out_Field_Data">
+                          <mva:VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="FieldData">
+                            <mva:VisualBasicReference.Result>
+                              <OutArgument x:TypeArguments="Location(scg:List(x:String))" />
+                            </mva:VisualBasicReference.Result>
+                          </mva:VisualBasicReference>
+                        </OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_PDF_Name">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item.ToString">
+                            <mva:VisualBasicValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </mva:VisualBasicValue.Result>
+                          </mva:VisualBasicValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="s:String[]" x:Key="in_Project_Fields">
+                          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="ProjectFields">
+                            <mva:VisualBasicValue.Result>
+                              <OutArgument x:TypeArguments="s:String[]" />
+                            </mva:VisualBasicValue.Result>
+                          </mva:VisualBasicValue>
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Data_To_Excel workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Elements/Add_Data_To_Excel.xaml">
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add_Data_To_Excel workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="Elements/Add_Data_To_Excel.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_Field_Data">[Field_Data]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_Project_Folder">[Project_Folder]</InArgument>
-                        <InArgument x:TypeArguments="x:String" x:Key="in_File_Name">[row(0).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FileName">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="item.ToString">
+                            <mva:VisualBasicValue.Result>
+                              <OutArgument x:TypeArguments="x:String" />
+                            </mva:VisualBasicValue.Result>
+                          </mva:VisualBasicValue>
+                        </InArgument>
+                        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_CollectionOfNewItems">
+                          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="FieldData">
+                            <mva:VisualBasicValue.Result>
+                              <OutArgument x:TypeArguments="scg:List(x:String)" />
+                            </mva:VisualBasicValue.Result>
+                          </mva:VisualBasicValue>
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
                 </ActivityAction>
-              </ui:ForEachRow.Body>
-            </ui:ForEachRow>
+              </ui:ForEach.Body>
+            </ui:ForEach>
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">380,447</av:Point>
-                  <av:Size x:Key="ShapeSize">200,68</av:Size>
+                  <av:Size x:Key="ShapeSize">200,66</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
